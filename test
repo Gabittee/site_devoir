@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 5 Card Example</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container my-5">
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+    <?php
+      $images = array(
+        "https://picsum.photos/seed/1/400/300",
+        "https://picsum.photos/seed/2/400/300",
+        "https://picsum.photos/seed/3/400/300",
+        "https://picsum.photos/seed/4/400/300",
+        "https://picsum.photos/seed/5/400/300"
+      );
+      $titles = array(
+        "Card title 1",
+        "Card title 2",
+        "Card title 3",
+        "Card title 4",
+        "Card title 5"
+      );
+      $texts = array(
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "Praesent tempus quam non molestie accumsan.",
+        "Donec sit amet magna in ipsum pulvinar lobortis.",
+        "Aenean lobortis ipsum euismod justo porttitor, quis hendrerit felis finibus.",
+        "Sed eget massa ac mauris suscipit vestibulum."
+      );
+      for ($i = 0; $i < 5; $i++) {
+    ?>
+    <div class="col">
+      <div class="card h-100">
+        <img src="<?php echo $images[$i]; ?>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><?php echo $titles[$i]; ?></h5>
+          <p class="card-text"><?php echo $texts[$i]; ?></p>
+        </div>
+      </div>
+    </div>
+    <?php } ?>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</body>
+</html>
