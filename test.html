@@ -1,0 +1,32 @@
+<div>
+  <label for="size1">x0.5</label>
+  <input type="radio" id="size1" name="screen-size" value="320x240" checked>
+  <label for="size2">x0.75</label>
+  <input type="radio" id="size2" name="screen-size" value="480x360">
+  <label for="size3">x1</label>
+  <input type="radio" id="size3" name="screen-size" value="640x480">
+  <label for="size4">x1.25</label>
+  <input type="radio" id="size4" name="screen-size" value="800x600">
+  <label for="size5">x1.5</label>
+  <input type="radio" id="size5" name="screen-size" value="960x720">
+</div>
+<div style="width:640px;height:480px;max-width:100%" id="game-container">
+  <div id="game"></div>
+</div>
+<script type="text/javascript">
+  var EJS_player = '#game';
+  var EJS_gameUrl = 'http://localhost/emu/ROM/smw/mario.sfc'; // Url to Game rom
+  var EJS_core = 'snes';
+  var EJS_mouse = false; // SNES Mouse
+  var EJS_multitap = false; // SNES Multitap
+  var container = document.getElementById("game-container");
+  var radios = document.getElementsByName("screen-size");
+
+  for (var i = 0; i < radios.length; i++) {
+    radios[i].addEventListener("change", function() {
+      container.style.width = this.value.split("x")[0] + "px";
+      container.style.height = this.value.split("x")[1] + "px";
+    });
+  }
+</script>
+<script src="https://www.emulatorjs.com/loader.js"></script> 
