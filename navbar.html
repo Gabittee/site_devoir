@@ -15,22 +15,36 @@
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <div class="collapse navbar-collapse ml-auto" id="navbarNavDropdown">
         <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link" href="index.php">Accueil<span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Jeu au hasard</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Mode sombre</a>
-        </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="index.php">Accueil<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Jeu au hasard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Mode sombre</a>
+            </li>
         </ul>
-        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Se deconnecter</button>
+        <ul class="navbar-nav mr-0">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Console
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">NES</a>
+                    <a class="dropdown-item" href="#">SNES</a>
+                    <a class="dropdown-item" href="#">N64</a>
+                    <a class="dropdown-item" href="#">GBA</a>
+                    <a class="dropdown-item" href="#">Mega Drive</a>
+                </div>
+            </li>
+        </ul>
+        <button class="btn btn-danger my-2 my-sm-0" type="submit">Se deconnecter</button>
     </div>
-    </nav>
-      
+</nav>
+
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
