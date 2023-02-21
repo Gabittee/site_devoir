@@ -7,7 +7,36 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
 </head>
 <body>
-        <?php include("navbar.html"); ?>
+
+
+
+<?php include("navbar.html"); ?>
+<link rel="stylesheet" href="ahh.css" type="text/css" />
+
+<!-- Phrase d'accueil -->
+<div class="center">
+  <p class="phrase">
+    <?php
+      $phrase_accueil = array(
+        "N'oubliez pas de prendre une douche de temps en temps.",
+        "Si Sonic court à la vitesse du son, il peut sûrement courir plus vite qu'un grille-pain.",
+        "Non, ce n'est pas un site pour jouer à Minecraft gratuitement.",
+        "Le plus grand trésor de la vie est l'amitié, ou bien 100 000€ en cash.",
+        "La vitesse de la lumière est de très beaucoup rapide par heures.",
+        "Non, ce n'est pas un site pour engager un menuisier.",
+        "Non, ce n'est pas un site pour commander un vol France-Congo",
+        "Je vends ma table pas chère, contactez-moi si vous êtes intéressé.",
+        "Je n'ai plus d'idée de citations à mettre ici. Je vais en faire générer par ChatGPT.",
+        "Comment Laurent Ruquier retire-t-il son pot de fleurs ? À la main !"
+      );
+      $index = array_rand($phrase_accueil);
+      echo $phrase_accueil[$index];
+    ?>
+  </p>
+</div>
+
+
+
 <?php
   $games = array(
     array("name" => "NES", "icon" => "http://localhost/emu/Icones/NES.png", "url" => "http://localhost/emu/NES.php"),

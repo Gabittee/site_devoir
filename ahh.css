@@ -1,0 +1,109 @@
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  text-align: center;
+}
+
+.phrase {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  background-color: #fff;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.size-options label {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.checkmark {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+}
+
+.checkmark::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #2196F3;
+}
+
+.size-options input[type="radio"]:checked + .checkmark::after {
+  display: block;
+}
+
+.label-text {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.size-options input[type="radio"] {
+  display: none;
+}
+
+.checkmark {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  border: 2px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.checkmark::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #333;
+  opacity: 0;
+}
+
+.size-options input[type="radio"]:checked + .checkmark::after {
+  opacity: 1;
+}
+
+#game-container {
+  width: 640px;
+  height: 480px;
+  max-width: 100%;
+  margin: 0 auto; /* Centre horizontalement */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
