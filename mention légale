@@ -1,17 +1,41 @@
-Nom et prénom de l'étudiant : Ipranossian Damien
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Exemple de changement de couleur de fond avec PHP</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+   </head>
+   <body>
+      <div class="container">
+         <?php
+            if(isset($_POST['wonki'])) {
+               echo '<style> body { background-color: green; } </style>';
+            }
+         ?>
+         <h2>Identification</h2>
+         <p>Nom et prénom de l'étudiant : Ipranossian Damien</p>
+         <p>Adresse de courriel : ipranossiand@gmail.com</p>
 
-Adresse de courriel : ipranossiand@gmail.com
+         <h2>Finalité du site web</h2>
+         <p>Ce site web a été réalisé dans le cadre d'un projet scolaire et a pour but de proposer des jeux en ligne.</p>
 
-Ce site web a été réalisé dans le cadre d'un projet scolaire.
+         <h2>Droits d'auteur</h2>
+         <p>Les jeux proposés sur ce site sont la propriété de leurs auteurs respectifs et sont protégés par les lois sur le droit d'auteur. Toute utilisation des jeux proposés sur ce site se fait sous la responsabilité de l'utilisateur.</p>
 
-Ce site web ne vise pas à générer des profits ou à exercer une activité commerciale.
+         <h2>Responsabilité</h2>
+         <p>L'étudiant créateur de ce site web ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation des jeux proposés sur ce site. L'utilisateur est seul responsable de l'utilisation qu'il fait des jeux proposés sur ce site.</p>
 
-Les droits d'auteur des jeux proposés sur ce site appartiennent à leurs auteurs respectifs.
+         <h2>Protection des données personnelles</h2>
+         <p>Ce site web ne collecte pas de données personnelles et respecte la vie privée de ses utilisateurs.</p>
 
-L'utilisation des jeux proposés sur ce site se fait sous la responsabilité de l'utilisateur.
+         <h2>Contacter l'étudiant créateur</h2>
+         <p>Pour toute question relative à ce site web, vous pouvez contacter l'étudiant créateur à l'adresse e-mail mentionnée ci-dessus.</p>
 
-L'étudiant créateur de ce site web ne pourra être tenu responsable des dommages résultant de l'utilisation des jeux proposés sur ce site.
+         <form method="post">
+            <button type="submit" name="wonki" class="btn btn-primary btn-lg">Wonki</button>
+         </form>
 
-Ce site web ne collecte pas de données personnelles.
-
-Pour toute question relative à ce site web, vous pouvez contacter l'étudiant créateur à l'adresse e-mail mentionnée ci-dessus.
+      </div>
+   </body>
+</html>
