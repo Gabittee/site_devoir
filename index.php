@@ -13,6 +13,10 @@
 
 include("navbar.html");
 
+
+
+// Cherche les phrases d'accueil dans la BDD
+
 try {
     $bdd = new PDO("mysql:host=localhost;dbname=emu;charset=utf8", "root", "");
 } catch (Exception $e) {
@@ -37,7 +41,10 @@ $num_citations = count($json);
 
 ?>
 
-<!-- Phrase d'accueil -->
+
+
+<!-- Affiche une phrase d'accueil au hasard -->
+
 <div class="center">
   <p class="phrase">
     <?php
@@ -50,6 +57,7 @@ $num_citations = count($json);
 
 
 
+<!-- Initialises les cards -->
 
 <?php
   $games = array(
@@ -64,6 +72,10 @@ $num_citations = count($json);
     array("name" => "Tous les jeux", "icon" => "/emu/Icones/stereotype-du-gamer-southpark.jpg", "url" => "/emu/tout_les_jeux.php")
   );
 ?>
+
+
+
+<!-- Affiche les cards définis au dessus à l'aide d'une boucle -->
 
 <div class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
