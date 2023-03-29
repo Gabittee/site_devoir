@@ -8,7 +8,7 @@ try {
 }
 
 
-$sql = "SELECT * FROM jeux WHERE Console like '$Console'";
+$sql = "SELECT * FROM jeux WHERE Console like '$Console'"; // $Console sera définie dans la page ou ce code sera inclus (exemple si le code est inclus dans NES.php alors $Console = nes).
 $stmt = $bdd->prepare($sql);
 $stmt->execute();
 
@@ -29,7 +29,8 @@ while($row = $donnees->fetch()){
 
 ?>
 
-<?php $compteur = 0 ?>
+
+<!-- Boucle pour afficher toutes les cards des jeux de la console choisi -->
 
 <div class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
