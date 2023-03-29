@@ -46,7 +46,7 @@ $jeux = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Ajouter, modifier ou supprimer un jeu</title>
+    <title>Ajouter ou supprimer un jeu</title>
     <style>
         table {
             border-collapse: collapse;
@@ -64,28 +64,19 @@ $jeux = $stmt->fetchAll(PDO::FETCH_ASSOC);
 </head>
 <body>
     <h1>Ajouter un jeu</h1>
-
     <form method="post">
-
         <label for="name">Nom du jeu :</label><br>
         <input type="text" name="name" id="name"><br>
-
         <label for="description">Description :</label><br>
         <textarea name="description" id="description" rows="3"></textarea><br>
-
         <label for="icon">Chemin de l'icône :</label><br>
-        <input type="text" name="icon" id="icon" value="http://localhost/emu/cover/"><br>
-
+        <input type="text" name="icon" id="icon"><br>
         <label for="rom">Chemin de la ROM :</label><br>
-        <input type="text" name="rom" id="rom" value="http://localhost/emu/ROM/"><br>
-
+        <input type="text" name="rom" id="rom"><br>
         <label for="console">Console :</label><br>
         <input type="text" name="console" id="console"><br>
-
         <input type="submit" value="Ajouter le jeu">
-
     </form>
-
 
     <h2>Liste des jeux :</h2>
     <table>
@@ -102,18 +93,12 @@ $jeux = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <tbody>
             <?php foreach ($jeux as $jeu) { ?>
                 <tr>
+                    <td><?php echo $jeu['Name']; ?></td>
+                    <td><?php echo $jeu['Description']; ?></td>
+                    <td><img src="<?php echo $jeu['Icon']; ?>" alt="<?php echo $jeu['Name']; ?>" height="100"></td>
+                    <td><?php echo $jeu['ROM']; ?></td>
+                    <td><?php echo $jeu['Console']; ?></td>
                     <td>
-                        <form method="post">
-                            <input type="hidden" name="update_id" value="<?php echo $jeu['ID']; ?>">
-                            <input type="text" name="name" value="<?php echo $jeu['Name']; ?>">
-                    </td>
-                    <td><textarea name="description" rows="3"><?php echo $jeu['Description']; ?></textarea></td>
-                    <td><input type="text" name="icon" value="<?php echo $jeu['Icon']; ?>"></td>
-                    <td><input type="text" name="rom" value="<?php echo $jeu['ROM']; ?>"></td>
-                    <td><input type="text" name="console" value="<?php echo $jeu['Console']; ?>"></td>
-                    <td>
-                        <input type="submit" value="Modifier">
-                        </form>
                         <form method="post" style="display:inline-block">
                             <input type="hidden" name="delete_id" value="<?php echo $jeu['ID']; ?>">
                             <input type="submit" value="Supprimer">

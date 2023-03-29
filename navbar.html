@@ -6,7 +6,16 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <title>navbar</title>
 
-  <link rel="stylesheet" href="formulaire.css" type="text/css" media="screen" />
+  <?php
+  session_start();
+  $dark = $_SESSION['dark'] ?? false; // initial value: false
+  if ($dark) {
+      echo '<link rel="stylesheet" href="ahh_dark.css">';
+  } else {
+      echo '<link rel="stylesheet" href="ahh.css">';
+  }
+  ?>
+  
 
 </head>
 <body>
@@ -23,9 +32,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="random.php">Jeu au hasard</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Mode sombre</a>
-            </li>
         </ul>
         <ul class="navbar-nav mr-0">
             <li class="nav-item dropdown">
@@ -38,13 +44,23 @@
                     <a class="dropdown-item" href="N64.php">N64</a>
                     <a class="dropdown-item" href="GBA.php">GBA</a>
                     <a class="dropdown-item" href="MD.php">Mega Drive</a>
+                    <a class="dropdown-item" href="PS1.php">PS1</a>
+                    <a class="dropdown-item" href="GB.php">Game Boy</a>
+                    <a class="dropdown-item" href="DS.php">DS</a>
                 </div>
             </li>
         </ul>
-        <button class="btn btn-danger my-2 my-sm-0" type="submit">Se deconnecter</button>
+        <?php
+            if (isset($_POST['darkmode'])) {
+                $dark = !$dark; // toggle value
+                $_SESSION['dark'] = $dark; // store new value in session
+            }
+        ?>
+        <form method="POST">
+            <button type="submit" class="btn btn-primary" name="darkmode"><?php echo $dark ? 'Mode clair' : 'Mode sombre'; ?></button>
+        </form>
     </div>
 </nav>
-
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

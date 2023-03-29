@@ -11,12 +11,7 @@
   font-weight: bold;
 }
 
-.card {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  background-color: #fff;
-}
+
 
 .card-body {
   padding: 1rem;

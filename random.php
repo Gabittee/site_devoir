@@ -27,7 +27,7 @@
       $randomIndex = array_rand($games);
       $randomGame = $games[$randomIndex];
     ?>
-    <div class="col-6">
+    <div class="col col-6">
       <div class="card h-100">
         <form method="post" action="emulateur.php">
           <input type="hidden" name="ROM" value="<?php echo $randomGame['ROM']; ?>">
