@@ -12,7 +12,7 @@
 
 include("navbar.html"); 
 
-$Console = "%";
+$Console = "%";  //pour prendre tout les jeux de la BDD
 
 try {
   $bdd = new PDO("mysql:host=localhost;dbname=emu;charset=utf8", "root", "");
@@ -20,7 +20,7 @@ try {
   die("Erreur : ".$e -> getMessage());
 }
 
-
+// Prends tout les jeux de la BDD puis en séléctionne un au hasard
 $sql = "SELECT * FROM jeux WHERE Console LIKE '$Console' ORDER BY RAND() LIMIT 1";
 $stmt = $bdd->prepare($sql);
 $stmt->execute();
@@ -42,8 +42,8 @@ while($row = $donnees->fetch()){
 
 ?>
 
-<?php $compteur = 0 ?>
 
+<!-- Affiche le jeux qui a été pris au hasard -->
 <div class="container my-5">
   <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
     <?php for($i = 0; $i < count($json); $i++) { ?>
@@ -52,7 +52,7 @@ while($row = $donnees->fetch()){
           <form method="post" action="emulateur.php">
             <input type="hidden" name="ROM" value="<?php echo $json[$i]->ROM; ?>">
             <input type="hidden" name="Description" value="<?php echo $json[$i]->Description; ?>">
-            <input type="hidden" name="Console" value="<?php echo $Console; ?>">
+            <input type="hidden" name="Console" value="<?php echo $json[$i]->$Console; ?>">
             <button type="submit" style="border: none; background: none; padding: 0;">
               <img src="<?php echo $json[$i]->Icon; ?>" class="card-img-top">
             </button>
