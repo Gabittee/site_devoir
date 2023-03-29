@@ -2,6 +2,10 @@
 <?php include("navbar.html"); ?>
 <link rel="stylesheet" href="ahh.css" type="text/css" />
 
+
+
+<!-- Permet de modifier la taille de l'écran de jeu -->
+
 <div style="width:640px;height:480px;max-width:100%" id="game-container">
   <div id="game"></div>
 </div>
@@ -39,6 +43,22 @@
 </div>
 
 
+
+<!-- Affiche la description si le jeu en possède une -->
+<div class="card w-100">
+  <div class="card-body">
+    <?php if (isset($_POST['Description'])) {
+      $Description = $_POST['Description'];
+      echo "<p class='card-text small text-center'>$Description</p>";
+    } ?>
+  </div>
+</div>
+
+
+
+
+<!-- Recupere les variables rom et console (récuperer en cliquant sur la card du jeu) pour pouvoir les mettre dans le code javascript qui suit -->
+
 <?php
   if (isset($_POST['ROM'])) {
     $ROM = $_POST['ROM'];
@@ -49,21 +69,15 @@
   }
 ?>
 
-<div class="card w-100">
-  <div class="card-body">
-    <?php if (isset($_POST['Description'])) {
-      $Description = $_POST['Description'];
-      echo "<p class='card-text small text-center'>$Description</p>";
-    } ?>
-  </div>
-</div>
+
+<!-- API permettant d'aller chercher le bon jeux en fonctionner des parametres des variables POST -->
 
 <script type="text/javascript">
   var EJS_player = '#game';
   var EJS_gameUrl = "<?php echo $ROM; ?>"; // Url to Game rom
   var EJS_core = "<?php echo $Console; ?>";
-  var EJS_mouse = false; // SNES Mouse
-  var EJS_multitap = false; // SNES Multitap
+  var EJS_mouse = false;
+  var EJS_multitap = false;
   var container = document.getElementById("game-container");
   var radios = document.getElementsByName("screen-size");
 
