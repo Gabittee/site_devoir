@@ -7,8 +7,7 @@
   <title>navbar</title>
 
   <?php
-  session_start();
-  $dark = $_SESSION['dark'] ?? false; // initial value: false
+  $dark = $_COOKIE['dark'] ?? false; // initial value: false
   if ($dark) {
       echo '<link rel="stylesheet" href="ahh_dark.css">';
   } else {
@@ -51,9 +50,8 @@
             </li>
         </ul>
         <?php
-            if (isset($_POST['darkmode'])) {
-                $dark = !$dark; // toggle value
-                $_SESSION['dark'] = $dark; // store new value in session
+            if (isset($_COOKIE['dark'])) {
+                $dark = !$_COOKIE['dark']; // toggle value
             }
         ?>
         <form method="POST">
