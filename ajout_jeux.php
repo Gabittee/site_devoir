@@ -91,7 +91,9 @@ $jeux = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($jeux as $jeu) { ?>
+            <?php 
+            // Boucle pour afficher les jeux dans le tableau
+            foreach ($jeux as $jeu) { ?>
                 <tr>
                     <td><?php echo $jeu['Name']; ?></td>
                     <td><?php echo $jeu['Description']; ?></td>
