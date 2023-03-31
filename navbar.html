@@ -8,10 +8,13 @@
 
   <?php
   $dark = $_COOKIE['dark'] ?? false; // initial value: false
+ // On récupère la valeur de la variable de cookie 'dark', ou on utilise la valeur 'false' si elle n'existe pas encore
   if ($dark) {
       echo '<link rel="stylesheet" href="ahh_dark.css">';
+  // Si la variable de cookie 'dark' est vraie, on inclut le fichier de style pour le thème sombre.
   } else {
       echo '<link rel="stylesheet" href="ahh.css">';
+  // Sinon, on inclut le fichier de style pour le thème clair.
   }
   ?>
   
@@ -49,11 +52,17 @@
                 </div>
             </li>
         </ul>
+      
+      
         <?php
+            // Vérifie si un cookie 'dark' est défini
             if (isset($_COOKIE['dark'])) {
-                $dark = !$_COOKIE['dark']; // toggle value
+                // Si oui, inverse la valeur du cookie pour basculer entre mode sombre et mode clair
+                $dark = !$_COOKIE['dark'];
             }
         ?>
+      
+      
         <form method="POST">
             <button type="submit" class="btn btn-primary" name="darkmode"><?php echo $dark ? 'Mode clair' : 'Mode sombre'; ?></button>
         </form>
